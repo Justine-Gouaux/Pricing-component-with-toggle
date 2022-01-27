@@ -1,0 +1,160 @@
+:root{
+    --main-color-rgb : 162, 165, 234;
+    --lighter-main-color : rgb(247, 247, 255);
+    --darker-main-color : rgb(105, 108, 211) ;
+    --text-color-rgb : 104, 105, 125;
+    --lighter-text-color : rgb(250, 250, 250);
+    --darker-text-color : rgb(61, 64, 81);
+}
+
+body {
+    font-size: 100%; 
+    background-color: var(--lighter-main-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body svg:first-child {
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    z-index: -1;
+}
+
+body svg:last-of-type{
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: -1;
+}
+
+h1 {
+    margin: 4rem auto 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(var(--text-color-rgb), 1);
+}
+
+.switch__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4rem auto;
+    color: rgba(var(--text-color-rgb), 0.6);
+}
+
+.switch__container label {
+    margin: 0.5rem 2rem;
+}
+
+#switch__box {
+    display: flex;
+    border-radius: 9999px;
+    height: 32px;
+    width: 58px;
+    background-image: linear-gradient(135deg, rgb(var(--main-color-rgb)), var(--darker-main-color));
+    padding: 3px;
+    cursor: pointer;
+}
+
+#switch__box.monthly {
+    justify-content: flex-end;
+}
+
+#switch__box.annually {
+    justify-content: flex-start;
+}
+
+.switch__circle{
+    visibility: visible;
+    border-radius: 9999px;
+    width: 26px;
+    background-color: var(--lighter-text-color);
+}
+
+.price__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price__container__column {
+    width: 320px;
+    background-color: var(--lighter-text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(var(--main-color-rgb), 0.5);
+    text-align: center;
+    margin: 0.2rem;
+    padding: 2rem;
+    color: rgb(var(--text-color-rgb));
+}
+
+.price__container__column div{
+    border-bottom: 1px solid rgba(var(--main-color-rgb), 0.3);
+    padding: 1rem;
+}
+
+.price__container__column div:last-child{
+    border-bottom: none;
+    padding: 1rem 0 0 0;
+}
+
+.price__monthly, .price__annually{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    margin: 1rem;
+    color: var(--darker-text-color);
+    opacity: 0;
+}
+
+.price__annually{
+    position: relative;
+    top: -4rem;
+    margin-bottom: -4rem;
+}
+
+.price__monthly span, .price__annually span{
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+}
+
+.current {
+    opacity: 1;
+    z-index: 1;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(135deg, rgb(var(--main-color-rgb)), var(--darker-main-color));
+    padding: 0.7rem;
+    width: 250px ;
+    color: var(--lighter-text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.price__container__column:hover {
+    transform: scale(1.1);
+    background-image: linear-gradient(135deg, rgb(var(--main-color-rgb)), var(--darker-main-color));
+    color: var(--lighter-text-color);
+}
+
+.price__container__column:hover button{
+    background: var(--lighter-main-color);
+    color: var(--darker-main-color);
+}
+
+.price__container__column:hover .price__monthly, .price__container__column:hover .price__annualy{
+    color: var(--lighter-main-color);
+}
